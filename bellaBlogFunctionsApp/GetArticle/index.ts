@@ -15,7 +15,6 @@ const httpTrigger: AzureFunction = async function (
 
     //http본문으로 전달되는 json데이터
     const searchData = req.body;
-    
     let article = await articlesService.read(id,searchData.ipaddress);
     response = { body: article, status: 200 };
   } catch (err) {
